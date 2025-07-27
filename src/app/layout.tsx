@@ -1,18 +1,106 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { siteData } from "@/lib/data";
+import localFont from 'next/font/local'
+import { cn } from "@/lib/utils";
+ 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const ttFirsNeue = localFont({
+  src: [
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Thin.ttf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-ThinItalic.ttf',
+      weight: '100',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-ExtraLight.ttf',
+      weight: '200',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-ExtraLightItalic.ttf',
+      weight: '200',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-LightItalic.ttf',
+      weight: '300',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Italic.ttf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-MediumItalic.ttf',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-DemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-DemiBoldItalic.ttf',
+      weight: '600',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-BoldItalic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-ExtraBoldItalic.ttf',
+      weight: '800',
+      style: 'italic',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-Black.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/TTFirsNeue/TTFirsNeue-BlackItalic.ttf',
+      weight: '900',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-tt-firs-neue',
+  display: 'swap',
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteData.url),
@@ -20,7 +108,6 @@ export const metadata: Metadata = {
   description:
     "Certifier is a digital credentials infrastructure. Easily make, share and verify digital certificates on autopilot. All-in-one platform for generation certificates and mass sending emails to recipients. Certificate maker with user friendly interface, ready-made templates, and delivery emails.",
   applicationName: siteData.name,
-  themeColor: "#ffffff",
   openGraph: {
     title: "Certificate Maker Online - Create & Send Digital Certificates",
     description:
@@ -48,21 +135,12 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: [
+    icon: [ 
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: { url: "/favicon/apple-touch-icon.png", sizes: "180x180" },
     shortcut: "/favicon/favicon.ico",
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/favicon/safari-pinned-tab.svg",
-        color: "#5bbad5",
-      },
-    ],
   },
-  manifest: "/favicon/site.webmanifest",
   alternates: {
     canonical: siteData.url,
     languages: {
@@ -100,7 +178,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn("font-sans antialiased", ttFirsNeue.variable)}
       >
         {children}
       </body>
