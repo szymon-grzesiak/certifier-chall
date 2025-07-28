@@ -15,6 +15,17 @@ The main objective was to implement a responsive frontend based on a provided Fi
 * Using Next.js and TypeScript for development.
 * Maintaining a clean, well-structured, and readable codebase.
 
+---
+
+## ✨ Bonus Features (Out of Scope)
+
+As an extra step beyond the core requirements, I implemented:
+
+* **Basic SEO:** Added essential metadata for better search engine visibility.
+* **Security Headers:** Configured fundamental security headers in the `next.config.ts` file to enhance the application's security.
+
+---
+
 ## 🛠️ Tech Stack
 
 * **Framework:** Next.js 15 (App Router)
